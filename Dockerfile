@@ -42,7 +42,7 @@ ENV PATH "/home/bc/.npm/bin:$PATH"
 
 ENV BCNODE_VERSION=0.1.0
 
-# Create src/log folder, copy sources from host and set permissions
+# Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/src && \
     cd /home/bc/src && \
     git checkout tags/v${BCNODE_VERSION} && \
