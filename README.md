@@ -1,4 +1,4 @@
-# docker-blockcollider
+# docker-blockcollider [![Build Status](https://travis-ci.org/trick77/docker-blockcollider.svg?branch=master)](https://travis-ci.org/trick77/docker-blockcollider)
 
 How to easily run [Block Collider's bcnode](https://github.com/blockcollider/bcnode) on Linux using Docker and docker-compose... and without running the process with root permissions.
 
