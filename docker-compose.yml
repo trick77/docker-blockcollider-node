@@ -1,0 +1,19 @@
+version: '2.1'
+
+services:
+  bcnode:
+    container_name: bcnode
+    build:
+      context: .
+    image: blockcollider/bcnode:latest
+    command: --rovers --node --ui --ws
+    volumes:
+      - data:/src/_data
+      - ./conf:/src/config:ro
+    ports:
+    - "3000:3000"
+    - "9090:9090"
+    restart: unless-stopped
+
+volumes:
+  data:
