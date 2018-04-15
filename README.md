@@ -9,7 +9,7 @@ Please don't create Github issues:
 
 Any other issues are welcome. However, please consider contributing by submitting pull requests instead.
 
-## Installation & running Block Collider
+## Installation & running bcnode
 
 1. Install the latest Docker CE environment.
 2. Install docker-compose
@@ -17,11 +17,9 @@ Any other issues are welcome. However, please consider contributing by submittin
 3. Clone this repo and cd into it
 4. ```sudo docker-compose up -d``` (this will build it and run it in the background)
 
-Once the build has been completed, check the log output of the running Docker container with ```docker-compose logs -f```
+Once the build has been completed, check the log output of the running Docker container with ```sudo docker-compose logs -f```
 
-To stop the container use ```docker-compose down```
-
-All saved block data is persisted in the data Docker volume.
+To stop the container use ```sudo docker-compose down```
 
 To see what the rovers do you can access http://localhost:3000 or, if your server's IP address is accessible from the internet, http://your-servers-public-ip:3000/. The UI shows the latest received blocks from the participating blockchains.
 
@@ -30,6 +28,16 @@ To see what the rovers do you can access http://localhost:3000 or, if your serve
 ## Configuration
 
 See the conf directory. As of now there's no documentation on the JSON configuration file. However, the configuration will be read from this directory whenever the container is started with the up command.
+
+The Collider's block data is persisted in the data Docker volume and will survive restarting the Docker container:
+
+```
+sudo docker volume ls
+DRIVER              VOLUME NAME
+local               docker-blockcollider_data
+```
+
+If you want to get rid of the existing block data, use ```docker-compose down -v```
 
 ## Limitations
 
