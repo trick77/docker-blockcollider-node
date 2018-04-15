@@ -1,6 +1,6 @@
 # docker-blockcollider
 
-How to easily run [Bock Collider's bcnode](https://github.com/blockcollider/bcnode) on Linux using Docker and docker-compose.
+How to easily run [Block Collider's bcnode](https://github.com/blockcollider/bcnode) on Linux using Docker and docker-compose.
 
 Please don't create Github issues:
 - if you don't know how to use Linux and/or Docker and/or git/Github.
