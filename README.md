@@ -21,7 +21,7 @@ Once the build has been completed, check the log output of the running Docker co
 
 To stop the container use ```sudo docker-compose down```
 
-To see what the rovers do you can access http://localhost:3000 or, if your server's IP address is accessible from the internet, http://your-servers-public-ip:3000/. The UI shows the latest received blocks from the participating blockchains.
+To see what the block rovers do you can access http://localhost:3000 or, if your server's IP address is accessible from the internet, http://your-servers-public-ip:3000/. The UI shows the latest received blocks from the participating blockchains.
 
 ![rovers](https://i.imgur.com/MP5cQGI.png)
 
@@ -43,9 +43,9 @@ If you want to get rid of the existing block data, use ```sudo docker-compose do
 
 Known limitations in bcnode v0.1.0:
 
-- No mainnet.
+- No Mainnet.
 - No wallet/emblem support.
-- Only the Rovers are working, mined blocks are not getting broadcasted.
-- The rovers eat up a quite some bandwith (approximately 18 GB/day) if they are being run continuously.
-- You won't get rich by running bcnode nor will you earn any NRG tokens at the moment.
+- Only the block rovers are working, mined blocks are not getting broadcasted.
+- The block rovers eat up quite some bandwith (approximately 18 GB/day) if they are being run continuously.
+- You won't get rich by running bcnode nor will you earn any NRG tokens.
 - Essentially, there's no point in running this at the moment unless you want to experiment with it.
