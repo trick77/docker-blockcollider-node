@@ -37,7 +37,7 @@ DRIVER              VOLUME NAME
 local               docker-blockcollider_data
 ```
 
-If you want to get rid of the existing block data, use ```docker-compose down -v```
+If you want to get rid of the existing block data, use ```sudo docker-compose down -v```
 
 ## Limitations
 
