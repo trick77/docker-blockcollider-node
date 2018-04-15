@@ -13,10 +13,8 @@ script:
   - 'make image'
 
 after_success:
-  - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-      docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+  - if [[ "${TRAVIS_BRANCH}" == "master" ]]; then
+      echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin ;
       make push-image ;
     fi
 
-notifications:
-  email: false
