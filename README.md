@@ -9,7 +9,7 @@ Please don't create Github issues:
 
 Any other issues are welcome. However, please consider contributing by submitting pull requests instead.
 
-## Installation & running bcnode
+## Installing & running bcnode
 
 1. Install the latest Docker CE environment.
 2. Install docker-compose
@@ -43,8 +43,9 @@ If you want to get rid of the existing block data, use ```sudo docker-compose do
 
 Known limitations in bcnode v0.1.0:
 
+- No mainnet.
 - No wallet/emblem support.
 - Only the Rovers are working, mined blocks are not getting broadcasted.
-- Eats up lots of CPU and bandwith resources (approximately 18 GB/day) if it runs continuously.
-- You won't get rich if by running bcnode nor will you earn any NRG tokens.
+- The rovers eat up a quite some bandwith (approximately 18 GB/day) if they are being run continuously.
+- You won't get rich by running bcnode nor will you earn any NRG tokens at the moment.
 - Essentially, there's no point in running this at the moment unless you want to experiment with it.
