@@ -5,9 +5,6 @@ RUN apt-get update && apt-get install -y \
     libboost-dev \
     unzip
 
-ENV YARN_VERSION=1.5.1
-ENV PROTOBUF_VERSION=3.5.1
-
 # Add non-privileged user
 RUN adduser --disabled-password --gecos '' bc
 
@@ -16,6 +13,9 @@ USER bc
 
 WORKDIR /home/bc
 
+ENV YARN_VERSION=1.5.1
+ENV PROTOBUF_VERSION=3.5.1
+
 # Install yarn
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version ${YARN_VERSION} \
     && export PATH=/home/bc/.yarn/bin:$PATH
@@ -23,7 +23,7 @@ ENV PATH "/home/bc/.yarn/bin:$PATH"
 
 # Install protobuf
 RUN curl -OL https://github.com/google/protobuf/releases/download/v${PROTOBUF_VERSION}/protoc-${PROTOBUF_VERSION}-linux-x86_64.zip \
-    && unzip protoc-3.5.1-linux-x86_64.zip -d /home/bc/protoc \
+    && unzip protoc-${PROTOBUF_VERSION}-linux-x86_64.zip -d /home/bc/protoc \
     && export PATH=/home/bc/protoc/bin:$PATH
 ENV PATH "/home/bc/protoc/bin:$PATH"
 
