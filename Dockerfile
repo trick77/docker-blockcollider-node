@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
 # Add non-privileged user
 RUN adduser --disabled-password --gecos '' bc
 
-ENV BCNODE_VERSION=0.1.0
 ENV YARN_VERSION=1.5.1
 ENV PROTOBUF_VERSION=3.5.1
+ENV BCNODE_VERSION=0.1.0
 
 # Create src/log folder, copy sources from host and set permissions
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/src && cd /home/bc/src && git checkout tags/v${BCNODE_VERSION} && mkdir /home/bc/src/logs
@@ -57,4 +57,3 @@ VOLUME /src/config
 EXPOSE 3000 9090
 
 ENTRYPOINT [ "node", "./bin/cli" ]
-

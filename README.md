@@ -1,6 +1,6 @@
 # docker-blockcollider
 
-How to easily run Bock Collider's bcnode on Linux using Docker and docker-compose.
+How to easily run [Bock Collider's bcnode](https://github.com/blockcollider/bcnode) on Linux using Docker and docker-compose.
 
 Please don't create Github issues:
 - if you don't know how to use Linux and/or Docker and/or git/Github.
@@ -24,6 +24,8 @@ To stop the container use ```docker-compose down```
 All saved block data is persisted in the data Docker volume.
 
 To see what the rovers do you can access http://localhost:3000 or, if your server's IP address is accessible from the internet, http://your-servers-public-ip:3000/. The UI shows the latest received blocks from the participating blockchains.
+
+![rovers](https://i.imgur.com/MP5cQGI.png)
 
 ## Configuration
 
