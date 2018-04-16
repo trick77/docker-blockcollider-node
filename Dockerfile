@@ -46,7 +46,8 @@ ENV BCNODE_BRANCH=master
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/src && \
     cd /home/bc/src && \
     git checkout ${BCNODE_BRANCH} && \
-    mkdir logs
+    mkdir logs && \
+    mkdir _data
 
 WORKDIR /home/bc/src
 
@@ -57,8 +58,6 @@ RUN yarn && \
     #yarn test --ci --coverage && \
     #yarn run outdated && \
     yarn run nsp check --threshold 7
-
-VOLUME /home/bc/src/_data
 
 EXPOSE 3000 9090
 
