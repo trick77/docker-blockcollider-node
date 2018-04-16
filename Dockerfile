@@ -59,6 +59,8 @@ RUN yarn && \
     #yarn run outdated && \
     yarn run nsp check --threshold 7
 
+VOLUME /home/bc/src/_data
+
 EXPOSE 3000 9090
 
 ENTRYPOINT [ "node", "./bin/cli" ]
