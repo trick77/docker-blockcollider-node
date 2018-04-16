@@ -9,6 +9,7 @@ services:
     environment:
       - BC_MONITOR=false
       - BC_DEBUG=false
+      - BC_LOG=info
     command: --ws --rovers --node --ui --miner-key ABCDEF
     volumes:
       - data:/home/bc/src/_data
