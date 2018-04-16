@@ -6,7 +6,11 @@ services:
     build:
       context: .
     image: trick77/bcnode:latest
-    command: --rovers --node --ui --ws
+    environment:
+      - BC_MONITOR=true
+      - BC_DEBUG=false
+      - BC_GRPC_HOST=127.0.0.1
+    command: --ws --rovers --node --ui --miner-key ABCDEF
     volumes:
       - data:/src/_data
       - ./conf:/src/config:ro

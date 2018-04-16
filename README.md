@@ -15,7 +15,8 @@ Any other issues are welcome. However, please consider contributing by submittin
 2. Install docker-compose
 	1. On Debian/Ubuntu: ```sudo apt -y install python-pip && sudo pip install docker-compose```
 3. Clone this repo and cd into it
-4. ```sudo docker-compose up -d``` (this will build it and run it in the background)
+4. Replace the miner-key in docker-compose.yml with your own miner-key 
+5. ```sudo docker-compose up -d``` (this will build it and run it in the background)
 
 Once the build has been completed, check the log output of the running Docker container with ```sudo docker-compose logs -f```
 
@@ -39,13 +40,3 @@ local               docker-blockcollider_data
 
 If you want to get rid of the existing block data, use ```sudo docker-compose down -v```
 
-## Limitations
-
-Known limitations in bcnode v0.1.0:
-
-- No Mainnet.
-- No wallet/emblem support.
-- Only the block rovers are working, mined blocks are not getting broadcasted.
-- The block rovers eat up quite some bandwidth (approximately 18 GB/day) if they are being run continuously.
-- You won't get rich by running bcnode nor will you earn any NRG tokens.
-- Essentially, there's no point in running this at the moment unless you want to experiment with it.
