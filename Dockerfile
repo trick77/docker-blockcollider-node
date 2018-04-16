@@ -1,4 +1,4 @@
-FROM node:8.11
+FROM node:9.11
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -50,8 +50,15 @@ RUN git clone https://github.com/blockcollider/bcnode /home/bc/src && \
 
 WORKDIR /home/bc/src
 
-# And build everything
-RUN yarn run dist
+RUN yarn && \
+    yarn run proto && \
+    yarn run build-native && \
+    yarn run build && \
+    #yarn test --ci --coverage && \
+    #yarn run outdated && \
+    yarn run nsp check --threshold 7
+
+VOLUME /home/bc/src/_data
 
 EXPOSE 3000 9090
 
