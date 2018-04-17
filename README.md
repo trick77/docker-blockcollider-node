@@ -22,7 +22,7 @@ Once the build has been completed, check the log output of the running Docker co
 
 To stop the container use ```sudo docker-compose down```
 
-To see what the block rovers do you can access http://localhost:3000/ or, if your server's IP address is accessible from the internet, http://your-servers-public-ip:3000/. The UI shows the latest received blocks from the participating blockchains.
+To see what the block rovers do you can access http://localhost:3000/ or, if your server's IP address is accessible from the internet, http://your-servers-public-ip:3000/. The UI shows the latest received blocks from the pegged blockchains.
 
 ![rovers](https://i.imgur.com/MP5cQGI.png)
 
