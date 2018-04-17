@@ -40,7 +40,7 @@ ENV PATH "/home/bc/.cargo/bin:$PATH"
 RUN npm install -g neon-cli --prefix /home/bc/.npm
 ENV PATH "/home/bc/.npm/bin:$PATH"
 
-ENV BCNODE_BRANCH=master
+ENV BCNODE_BRANCH=release
 
 # Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/src && \
