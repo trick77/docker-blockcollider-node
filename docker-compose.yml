@@ -13,10 +13,9 @@ services:
     command: --ws --rovers --node --ui --miner-key ABCDEF
     volumes:
       - data:/home/bc/src/_data
-      - ./conf:/src/config:ro
+      - ./conf:/home/bc/src/config:ro
     ports:
     - "3000:3000"
-    - "9090:9090"
     restart: unless-stopped
 
 volumes:
