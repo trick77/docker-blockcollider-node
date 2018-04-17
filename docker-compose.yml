@@ -10,10 +10,10 @@ services:
       - BC_MONITOR=false
       - BC_DEBUG=false
       - BC_LOG=info
-    command: --ws --rovers --node --ui --miner-key ABCDEF
+    command: --ws --rovers --node --ui --miner-key 0x93490z9j390fdih2390kfcjsd90j3uifhs909ih3
     volumes:
-      - data:/home/bc/src/_data
-      - ./conf:/home/bc/src/config:ro
+      - data:/home/bc/bcnode/_data
+      - ./conf:/home/bc/bcnode/config:ro
     ports:
     - "3000:3000"
     restart: unless-stopped

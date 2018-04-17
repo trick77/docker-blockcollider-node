@@ -40,16 +40,16 @@ ENV PATH "/home/bc/.cargo/bin:$PATH"
 RUN npm install -g neon-cli --prefix /home/bc/.npm
 ENV PATH "/home/bc/.npm/bin:$PATH"
 
-ENV BCNODE_BRANCH=release
+ENV BCNODE_BRANCH=master
 
 # Clone Block Collider repository
-RUN git clone https://github.com/blockcollider/bcnode /home/bc/src && \
-    cd /home/bc/src && \
+RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
+    cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
     mkdir logs && \
     mkdir _data
 
-WORKDIR /home/bc/src
+WORKDIR /home/bc/bcnode
 
 RUN yarn && \
     yarn run proto && \
@@ -59,9 +59,9 @@ RUN yarn && \
     #yarn run outdated && \
     yarn run nsp check --threshold 7
 
-VOLUME /home/bc/src/config
-VOLUME /home/bc/src/_data
+VOLUME /home/bc/bcnode/config
+VOLUME /home/bc/bcnode/_data
 
-EXPOSE 3000 9090
+EXPOSE 3000
 
 ENTRYPOINT [ "node", "./bin/cli" ]

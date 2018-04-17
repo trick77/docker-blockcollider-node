@@ -3,9 +3,9 @@
 How to easily run [Block Collider's bcnode](https://github.com/blockcollider/bcnode) on Linux using Docker and docker-compose... and without running the container as root.
 
 Please don't create Github issues:
-- if you don't know how to use Linux and/or Docker and/or git/Github.
-- if you don't know how to run Docker on Windows or the Mac.
-- if you have questions about Block Collider, these should go to the appropriate Telegram channels.
+- If you don't know how to use Linux and/or Docker and/or git/Github.
+- If you don't know how to run Docker on Windows or the Mac.
+- If you have questions about Block Collider, these should go to the appropriate Telegram channels.
 
 Any other issues are welcome. However, please consider contributing by submitting pull requests instead.
 
