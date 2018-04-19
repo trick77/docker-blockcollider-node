@@ -1,6 +1,6 @@
 # docker-blockcollider-node [![Build Status](https://travis-ci.org/trick77/docker-blockcollider.svg?branch=master)](https://travis-ci.org/trick77/docker-blockcollider)
 
-How to easily run [Block Collider's rover/node/miner](https://github.com/blockcollider/bcnode) on Linux using Docker, docker-compose and without running the miner as root.
+How to easily run [Block Collider's rover/node/miner](https://github.com/blockcollider/bcnode) on Linux using Docker, docker-compose and without running the container as root.
 
 Please don't create Github issues:
 - If you don't know how to use Linux and/or Docker and/or git/Github.
