@@ -46,7 +46,7 @@ ENV BCNODE_BRANCH=master
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
-    mkdir logs && \
+    mkdir _logs && \
     mkdir _data
 
 WORKDIR /home/bc/bcnode
