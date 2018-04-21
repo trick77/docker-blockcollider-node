@@ -51,13 +51,18 @@ RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
 
 WORKDIR /home/bc/bcnode
 
+# Fix for https://github.com/blockcollider/bcnode/issues/199
+RUN sed -i 's/"libp2p-secio": "^0.9.4"/"libp2p-secio": "^0.10.0"/' package.json
+
 RUN yarn && \
     yarn run proto && \
     yarn run build-native && \
     yarn run build && \
     #yarn test --ci --coverage && \
     #yarn run outdated && \
-    yarn run nsp check --threshold 7
+    yarn run nsp check --threshold 7 && \
+    rm -rf native/target && \
+    rm -rf target
 
 VOLUME /home/bc/bcnode/config
 VOLUME /home/bc/bcnode/_data
