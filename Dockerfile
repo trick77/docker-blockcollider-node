@@ -46,13 +46,12 @@ ENV BCNODE_BRANCH=master
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
+    git pull origin pull/202/head && \
     mkdir _logs && \
     mkdir _data
 
 WORKDIR /home/bc/bcnode
-
-# Fix for https://github.com/blockcollider/bcnode/issues/199
-RUN sed -i 's/"libp2p-secio": "^0.9.4"/"libp2p-secio": "^0.10.0"/' package.json
+COPY version.json ./.version.json
 
 RUN yarn && \
     yarn run proto && \
