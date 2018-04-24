@@ -30,9 +30,6 @@ ENV PATH "/home/bc/protoc/bin:$PATH"
 # Install nightly rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly \
     && export PATH=/home/bc/.cargo/bin:$PATH \
-    && rustup update \
-    && rustc -Vv \
-    && cargo -V \
     && rustup component add rust-src
 ENV PATH "/home/bc/.cargo/bin:$PATH"
 
@@ -41,6 +38,9 @@ RUN npm install -g neon-cli --prefix /home/bc/.npm
 ENV PATH "/home/bc/.npm/bin:$PATH"
 
 ENV BCNODE_BRANCH=master
+
+RUN git config --global user.email "me@example.com" && \
+    git config --global user.name "username"
 
 # Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
@@ -51,17 +51,16 @@ RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     mkdir _data
 
 WORKDIR /home/bc/bcnode
-COPY version.json ./.version.json
+#COPY version.json ./.version.json
 
 RUN yarn && \
     yarn run proto && \
     yarn run build-native && \
     yarn run build && \
-    #yarn test --ci --coverage && \
-    #yarn run outdated && \
     yarn run nsp check --threshold 7 && \
     rm -rf native/target && \
-    rm -rf target
+    rm -rf target && \
+    rm -rf src
 
 VOLUME /home/bc/bcnode/config
 VOLUME /home/bc/bcnode/_data
