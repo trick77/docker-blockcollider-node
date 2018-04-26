@@ -39,19 +39,14 @@ ENV PATH "/home/bc/.npm/bin:$PATH"
 
 ENV BCNODE_BRANCH=master
 
-RUN git config --global user.email "me@example.com" && \
-    git config --global user.name "username"
-
 # Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
-    git pull origin pull/202/head && \
     mkdir _logs && \
     mkdir _data
 
 WORKDIR /home/bc/bcnode
-#COPY version.json ./.version.json
 
 RUN yarn && \
     yarn run proto && \
