@@ -1,8 +1,7 @@
 FROM node:8.11
 
 RUN apt-get update && apt-get install -y \
-    git \
-    libboost-dev \
+    git  \
     unzip
 
 # Add non-privileged user
@@ -38,6 +37,9 @@ RUN npm install -g neon-cli --prefix /home/bc/.npm
 ENV PATH "/home/bc/.npm/bin:$PATH"
 
 ENV BCNODE_BRANCH=master
+# Dummy user data which is required to be able to pull PR for some reason
+#RUN git config --global user.email "me@example.com" && \
+#    git config --global user.name "username"
 
 # Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
@@ -53,8 +55,6 @@ RUN yarn && \
     yarn run build-native && \
     yarn run build && \
     yarn run nsp check --threshold 7 && \
-    rm -rf native/target && \
-    rm -rf target && \
     rm -rf src
 
 VOLUME /home/bc/bcnode/config
