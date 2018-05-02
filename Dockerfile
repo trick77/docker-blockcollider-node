@@ -1,8 +1,7 @@
 FROM node:8.11
 
 RUN apt-get update && apt-get install -y \
-    git \
-    libboost-dev \
+    git  \
     unzip
 
 # Add non-privileged user
