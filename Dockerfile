@@ -38,8 +38,6 @@ RUN npm install -g neon-cli --prefix /home/bc/.npm
 ENV PATH "/home/bc/.npm/bin:$PATH"
 
 ENV BCNODE_BRANCH=master
-ENV BCNODE_PR=209
-
 # Dummy user data which is required to be able to pull PR for some reason
 RUN git config --global user.email "me@example.com" && \
     git config --global user.name "username"
@@ -48,7 +46,8 @@ RUN git config --global user.email "me@example.com" && \
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
-    git pull origin pull/${BCNODE_PR}/head && \
+    git pull --no-edit origin pull/209/head && \
+    git pull --no-edit origin pull/210/head && \
     mkdir _logs && \
     mkdir _data
 
