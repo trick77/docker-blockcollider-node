@@ -39,15 +39,13 @@ ENV PATH "/home/bc/.npm/bin:$PATH"
 
 ENV BCNODE_BRANCH=master
 # Dummy user data which is required to be able to pull PR for some reason
-RUN git config --global user.email "me@example.com" && \
-    git config --global user.name "username"
+#RUN git config --global user.email "me@example.com" && \
+#    git config --global user.name "username"
 
 # Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
-    git pull --no-edit origin pull/209/head && \
-    git pull --no-edit origin pull/210/head && \
     mkdir _logs && \
     mkdir _data
 
@@ -58,8 +56,6 @@ RUN yarn && \
     yarn run build-native && \
     yarn run build && \
     yarn run nsp check --threshold 7 && \
-#    rm -rf native/target && \
-#    rm -rf target && \
     rm -rf src
 
 VOLUME /home/bc/bcnode/config
