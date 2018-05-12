@@ -50,6 +50,9 @@ RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
 
 WORKDIR /home/bc/bcnode
 
+# Experimental bugfix https://github.com/libp2p/js-libp2p-switch/pull/249
+RUN sed -i 's/"libp2p": "^0.19.2"/"libp2p": "^0.20.0"/' package.json
+
 RUN yarn && \
     yarn run proto && \
     yarn run build-native && \
