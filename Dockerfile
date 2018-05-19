@@ -36,6 +36,8 @@ ENV PATH "/home/bc/.cargo/bin:$PATH"
 RUN npm install -g neon-cli --prefix /home/bc/.npm
 ENV PATH "/home/bc/.npm/bin:$PATH"
 
+ARG BUILD_FROM_HERE
+
 ENV BCNODE_BRANCH=master
 # Dummy user data which is required to be able to pull PR for some reason
 #RUN git config --global user.email "me@example.com" && \

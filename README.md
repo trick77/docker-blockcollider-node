@@ -26,6 +26,10 @@ To see what the block rovers do you can access http://localhost:3000/ or, if you
 
 ![rovers](https://i.imgur.com/MP5cQGI.png)
 
+### Rebuilding the image
+
+If there's a new miner version you can use ```sudo docker-compose build --no-cache``` to rebuild the entire image or you can change the property value in the .env file and run an optimized build with ```sudo docker-compose build```
+
 ## Configuration
 
 See the conf directory. As of now there's no documentation on the JSON configuration file. However, the configuration will be read from this directory whenever the container is started with the up command.
