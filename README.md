@@ -29,7 +29,8 @@ To see what the block rovers do you can access http://localhost:3000/ or, if you
 ### Rebuilding the image
 
 If there's a new miner version you can use ```sudo docker-compose build --no-cache``` to rebuild the entire image or you can change the property value in the .env file and run a faster build with ```sudo docker-compose build```
-Once the image is ready, type ```sudo docker-compose down && sudo docker-compose up -d``` to run the new miner image.
+
+Once the new image is ready, type ```sudo docker-compose down && sudo docker-compose up -d``` to run the new miner image.
 
 ## Configuration
 

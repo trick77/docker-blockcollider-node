@@ -55,6 +55,9 @@ WORKDIR /home/bc/bcnode
 # Experimental bugfix https://github.com/libp2p/js-libp2p-switch/pull/249
 RUN sed -i 's/"libp2p": "^0.19.2"/"libp2p": "^0.20.0"/' package.json
 
+# Reduce number of required blocks to start mining
+RUN sed -i 's/numCollected >= 2/numCollected >= 1/' src/engine/index.es6
+
 RUN yarn && \
     yarn run proto && \
     yarn run build-native && \
