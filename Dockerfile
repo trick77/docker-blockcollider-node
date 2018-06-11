@@ -39,11 +39,7 @@ ENV PATH "/home/bc/.npm/bin:$PATH"
 ARG BUILD_FROM_HERE
 
 ENV BCNODE_BRANCH=master
-# Dummy user data which is required to be able to pull PR for some reason
-#RUN git config --global user.email "me@example.com" && \
-#    git config --global user.name "username"
 
-# Clone Block Collider repository
 RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
     cd /home/bc/bcnode && \
     git checkout ${BCNODE_BRANCH} && \
@@ -53,7 +49,7 @@ RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
 WORKDIR /home/bc/bcnode
 
 # Reduce number of required blocks to start mining
-RUN sed -i 's/numCollected >= 2/numCollected >= 1/' src/engine/index.es6
+#RUN sed -i 's/numCollected >= 2/numCollected >= 1/' src/engine/index.es6
 
 RUN yarn && \
     yarn run proto && \
