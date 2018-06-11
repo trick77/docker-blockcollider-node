@@ -53,8 +53,8 @@ RUN git clone https://github.com/blockcollider/bcnode /home/bc/bcnode && \
 WORKDIR /home/bc/bcnode
 
 # Experimental bugfix https://github.com/libp2p/js-libp2p-switch/pull/249
-RUN sed -i 's/"libp2p": "^0.19.2"/"libp2p": "^0.20.0"/' package.json
-RUN sed -i 's/"bitcore-p2p": "akloboucnik\/bitcore-p2p#fix-unknown-message-or-malformed-payload"/"bitcore-p2p": "^1.1.2"/' package.json
+#RUN sed -i 's/"libp2p": "^0.19.2"/"libp2p": "^0.20.0"/' package.json
+#RUN sed -i 's/"bitcore-p2p": "akloboucnik\/bitcore-p2p#fix-unknown-message-or-malformed-payload"/"bitcore-p2p": "^1.1.2"/' package.json
 
 # Reduce number of required blocks to start mining
 RUN sed -i 's/numCollected >= 2/numCollected >= 1/' src/engine/index.es6
