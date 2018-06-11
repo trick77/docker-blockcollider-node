@@ -12,7 +12,7 @@ services:
       - BC_MONITOR=false
       - BC_DEBUG=false
       - BC_LOG=info
-    command: start --ws --rovers --node --ui --miner-key replace-me
+    command: start --ws --rovers --node --ui --miner-key 0x725efa968f9be2687d4fae75d7b2bc67fadc06e7
     volumes:
       - data:/home/bc/bcnode/_data
       - ./conf:/home/bc/bcnode/config:ro
